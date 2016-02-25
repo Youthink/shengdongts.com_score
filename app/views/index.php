@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							<ul class="submenu">
 								<li>
-									<a href='<?php echo  site_url().'/admin/adminshow/alluser'?>'>
+									<a href='<?php echo  site_url();?>'>
 										<i class="icon-double-angle-right"></i>
 							            排名管理
 									</a>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="page-content">
 						<!-- PAGE CONTENT BEGINS -->
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-xs-10">
 								<h3 class="header smaller lighter blue">排名列表</h3>
 								<div class="table-responsive">
 									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
@@ -136,10 +136,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<th>学分</th>
 												<th class="hidden-480">操作</th>
 											</tr>
-										</thead>
-										<tbody> 
+										</thead><?php $i=1;?>
+										<tbody> <?php foreach ($score as $score_items): ?>
 											<tr>
-											</tr>
+											<td><?php echo $i++;?></td>
+											<td><?php echo $score_items['username']; ?></td>
+											<td><?php echo $score_items['remark']; ?></td>
+											<td><?php echo $score_items['score']; ?></td>
+											<td>删除|修改</td>
+											</tr><?php endforeach; ?>
 										</tbody>
 									</table>
 								</div>

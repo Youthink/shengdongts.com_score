@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="form-horizontal">
 									<?php echo validation_errors(); ?>
 
-									<?php echo form_open('addscore'); ?>
+									<?php echo form_open('home/addScore'); ?>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
 										<div class="col-sm-9">
