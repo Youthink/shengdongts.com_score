@@ -116,45 +116,75 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</li>
 
 							<li>
-								<a href="#">学分排名</a>
+								<a href="#">添加客户信息</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 					</div>
 					<div class="page-content">
-						<!-- PAGE CONTENT BEGINS -->
 						<div class="row">
-							<div class="col-xs-10">
-								<h3 class="header smaller lighter blue">排名列表</h3>
-								<div class="table-responsive">
-									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr>
-												<th>序号</th>
-												<th>姓名</th>
-												<th>备注</th>
-												<th>学分</th>
-												<th class="hidden-480">操作</th>
-											</tr>
-										</thead><?php $i=1;?>
-										<tbody> <?php foreach ($score as $score_items): ?>
-											<tr>
-											<td><?php echo $i++;?></td>
-											<td><?php echo $score_items['username']; ?></td>
-											<td><?php echo $score_items['remark']; ?></td>
-											<td><?php echo $score_items['score']; ?></td>
-											<td>删除|修改</td>
-											</tr><?php endforeach; ?>
-										</tbody>
-									</table>
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+                               <h3 class="header smaller lighter blue">添加客户信息</h3>
+								<div class="form-horizontal">
+									<?php echo validation_errors(); ?>
+
+									<?php echo form_open('home/addInfo'); ?>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="username" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">等级</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-1" name="rank" placeholder="填写数字.例如:1" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">电话</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-1" name="phone"/>
+											</span>
+										</div>
+									</div>
+								
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">报名时间</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="date" id="form-field-1" name="addtime"/>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">视频链接</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="link" placeholder="请包含http;//"/>
+											</span>
+										</div>
+									</div>
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info"  type="submit">
+											<i class="icon-ok bigger-110"></i>
+											添加
+										</button>
+									</div>
 								</div>
-					        </div>
-				        </div>
+				              </div>
+						</div><!-- /.row -->
 					</div>
-						<!-- /.page-content -->
-					<!-- /.main-container-inner -->
-					<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-						<i class="icon-double-angle-up icon-only bigger-110"></i>
-					</a>
+				</div>	<!-- /.page-content -->
+				<!-- /.main-container-inner -->
+				<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+					<i class="icon-double-angle-up icon-only bigger-110"></i>
+				</a>
 				</div><!-- /.main-container --> <!-- basic scripts --> 
 				<!--[if !IE]> -->
 				<script type="text/javascript">
@@ -176,3 +206,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<!-- inline scripts related to this page -->
 	</body>
 </html>
+

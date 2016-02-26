@@ -90,21 +90,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 							<ul class="submenu">
 								<li>
-									<a href='<?php echo  site_url().'/admin/adminshow/alluser'?>'>
+									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
 										用户信息管理
 									</a>
 								</li>
 
 								<li>
-									<a href='<?php echo  site_url().'/admin/adminshow/adduser'?>'>
+									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
 										添加用户信息
 									</a>
 								</li>
 							</ul>
 						</li>
-
 					</ul><!-- /.nav-list -->
 				</div>
 
