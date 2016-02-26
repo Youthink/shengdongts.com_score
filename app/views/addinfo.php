@@ -18,6 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src='<?php echo base_url().'public/assets/js/html5shiv.js'?>'></script>
 		<script src='<?php echo base_url().'public/assets/js/respond.min.js'?>'>></script>
 		<![endif]-->
+		<style>
+         @media only screen and (max-width: 990px){
+           .page-content {
+            padding-left: 20%;
+         }}
+		</style>
 	</head>
 
 	<body>
@@ -43,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="sidebar" id="sidebar">
 					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-							<a class="btn btn-warning" href="<?php echo base_url()?>">
+							<a class="btn btn-warning" href="http://shengdongts.com">
 								<i class="icon-reply"></i>返回前台
 							</a>
 						</div>
@@ -74,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</li>
 
 								<li>
-									<a href='<?php echo  site_url().'/home/admin/addScore'?>'>
+									<a href='<?php echo  site_url().'/home/admin/addscore'?>'>
 										<i class="icon-double-angle-right"></i>
 										添加学分信息
 									</a>
@@ -84,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
-								<span class="menu-text">用户信息管理</span>
+								<span class="menu-text">客户信息管理</span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
@@ -92,14 +98,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li>
 									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										用户信息管理
+										客户信息管理
 									</a>
 								</li>
 
 								<li>
 									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										添加用户信息
+										添加客户信息
 									</a>
 								</li>
 							</ul>
@@ -112,7 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">首页</a>
+								<a href="<?php echo base_url();?>">首页</a>
 							</li>
 
 							<li>
@@ -122,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="page-content">
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-md-12">
 								<!-- PAGE CONTENT BEGINS -->
                                <h3 class="header smaller lighter blue">添加客户信息</h3>
 								<div class="form-horizontal">
@@ -130,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 									<?php echo form_open('home/addInfo'); ?>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
+										<label class="col-sm-3  control-label no-padding-right" for="form-field-1">姓名</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
 											    <input type="text" id="form-field-1" name="username" />
@@ -170,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</span>
 										</div>
 									</div>
-									<div class="col-md-offset-3 col-md-9">
+									<div class="col-sm-offset-3 col-sm-9">
 										<button class="btn btn-info"  type="submit">
 											<i class="icon-ok bigger-110"></i>
 											添加

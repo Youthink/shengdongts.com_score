@@ -29,6 +29,7 @@ class Score_model extends CI_Model
     {
         if($username=='')
         {
+              $this->db->order_by('score', 'DESC');
               $query = $this->db->get('user_score');
 
               return $query->result_array();
@@ -86,6 +87,17 @@ class Score_model extends CI_Model
 
               return $query->row_array();
         }
+    }
+
+
+        public function search_info($username,$phone)
+    {
+        
+          $this->db->where('username', $username);
+          $this->db->where('phone', $phone);
+          $query = $this->db->get('user_info');
+
+          return $query->row_array();
     }
 
 

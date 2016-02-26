@@ -49,8 +49,10 @@ class Home extends CI_Controller{
       public function addScore()
     {
         
-        $this->form_validation->set_rules('username', 'username', 'required');
-        $this->form_validation->set_rules('score', 'score', 'required');
+        $this->form_validation->set_rules('username', 'username', 'required',
+            array('required' => '姓名不能为空'));
+        $this->form_validation->set_rules('score', 'score', 'required',
+            array('required' => '分数不能为空'));
 
         if ($this->form_validation->run() === FALSE)
         {
@@ -70,7 +72,14 @@ class Home extends CI_Controller{
      public function addInfo()
     {
         
-        $this->form_validation->set_rules('username', 'username', 'required');
+        $this->form_validation->set_rules('username', 'username', 'required',
+            array('required' => '姓名不能为空'));
+        $this->form_validation->set_rules('rank', 'rank', 'required',
+            array('required' => '等级不能为空'));
+        $this->form_validation->set_rules('phone', 'phone', 'required',
+            array('required' => '电话不能为空'));
+        $this->form_validation->set_rules('addtime', 'addtime', 'required',
+            array('required' => '报名时间不能为空'));
 
         if ($this->form_validation->run() === FALSE)
         {
@@ -80,6 +89,31 @@ class Home extends CI_Controller{
 
             $this->score_model->M_addinfo();
             redirect(site_url().'/home/show/comeinfo');
+
+        }
+
+
+    }
+
+     public function Search()
+    {
+        
+        $this->form_validation->set_rules('username', 'username', 'required',
+            array('required' => '姓名不能为空'));
+        $this->form_validation->set_rules('phone', 'phone', 'required',
+            array('required' => '电话不能为空'));
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('search');
+
+        }else{
+
+            $username = $this->input->post('username');
+            $phone = $this->input->post('phone');
+            $result['result'] = $this->score_model->search_info($username,$phone);
+
+            $this->load->view('reasult',$result); 
 
         }
 

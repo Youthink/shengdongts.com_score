@@ -28,23 +28,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<body>
 	<div class="main-content">
 		<div class="col-md-offset-3 col-md-6">
-			<h3 class="blue">排名列表</h3>
+			<h3 class="blue">查询结果</h3>
 			<div class="table-responsive">
 				<table  class="table table-striped table-bordered table-hover">
-					<thead>
+				<?php if(!empty($result)){ ?>
 						<tr>
-							<th>序号</th>
-							<th>姓名</th>
-							<th>学分</th>
+							<td class="success">姓名</td>
+							<td><?php echo $result['username']; ?></td>
 						</tr>
-					</thead><?php $i=1;?>
-					<tbody> <?php foreach ($score as $score_items): ?>
 						<tr>
-						<td class="warning"><?php echo $i++;?></td>
-						<td class="danger"><?php echo $score_items['username']; ?></td>
-						<td class="success"><?php echo $score_items['score']; ?></td>
-						</tr><?php endforeach; ?>
-					</tbody>
+							<td class="success">等级</td>
+							<td><?php echo $result['rank']; ?></td>
+						</tr>
+						<tr>
+							<td class="success">电话</td>
+							<td><?php echo $result['phone']; ?></td>
+						</tr>
+						<tr>
+							<td class="success">报名时间</td>
+							<td><?php echo $result['addtime']; ?></td>
+						</tr>
+						<tr>
+							<td class="success">视频链接</td>
+							<td><?php echo $result['link']; ?></td>
+						</tr>
+						<?php }else{
+                            echo "<tr><td>没有相关信息!!!</td></tr>";
+							echo "<tr><td>请检查填入的信息是否正确.</td></tr>";
+							} ?>
 				</table>
 			</div>
         </div>

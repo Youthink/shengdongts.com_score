@@ -18,6 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src='<?php echo base_url().'public/assets/js/html5shiv.js'?>'></script>
 		<script src='<?php echo base_url().'public/assets/js/respond.min.js'?>'>></script>
 		<![endif]-->
+		<style>
+         @media only screen and (max-width: 990px){
+           .page-content {
+            padding-left: 20%;
+         }}
+		</style>
 	</head>
 
 	<body>
@@ -43,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="sidebar" id="sidebar">
 					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-							<a class="btn btn-warning" href="<?php echo base_url()?>">
+						<a class="btn btn-warning" href="http://shengdongts.com">
 								<i class="icon-reply"></i>返回前台
 							</a>
 						</div>
@@ -74,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</li>
 
 								<li>
-									<a href='<?php echo  site_url().'/home/admin/addScore'?>'>
+									<a href='<?php echo  site_url().'/home/admin/addscore'?>'>
 										<i class="icon-double-angle-right"></i>
 										添加学分信息
 									</a>
