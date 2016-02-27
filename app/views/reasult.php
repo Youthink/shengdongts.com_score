@@ -22,6 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			h3,#idbutton{
 		        text-align: center;
 		       }
+		       td{  
+				word-wrap: break-word;  
+				word-break: normal;  
+				} 
 		</style>
 	</head>
 		
@@ -49,8 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<td><?php echo $result['addtime']; ?></td>
 						</tr>
 						<tr>
-							<td class="success">视频链接</td>
-							<td><a href="http://<?php echo $result['link']; ?>"><?php echo $result['link']; ?></a></td>
+							<td class="success">视频</td>
+							<td><?php echo $result['link']; ?></td>
 						</tr>
 						<?php }else{
                             echo "<tr><td>没有相关信息!!!</td></tr>";

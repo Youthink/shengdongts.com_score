@@ -164,4 +164,15 @@ class Home extends CI_Controller{
 
     }
 
+      public function viewInfo($infoid)
+    {
+
+        $result['result'] = $this->score_model->get_info($infoid);
+
+        $this->load->view('reasult',$result); 
+
+
+
+    }
+
 }
