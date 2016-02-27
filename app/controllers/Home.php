@@ -120,4 +120,18 @@ class Home extends CI_Controller{
 
     }
 
+    public function deleteScore($id){
+
+        $this->score_model->M_deletescore($id);
+        redirect(site_url());
+
+    }
+
+    public function deleteInfo($infoid){
+
+        $this->score_model->M_deleteinfo($infoid);
+        redirect(site_url().'/home/show/comeinfo');
+
+    }
+
 }

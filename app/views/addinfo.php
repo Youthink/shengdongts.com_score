@@ -161,7 +161,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									</div>
 								
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">报名时间</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">考级时间</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
 											    <input type="date" id="form-field-1" name="addtime"/>

@@ -139,7 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<th>姓名</th>
 												<th>电话</th>
 												<th>等级</th>
-												<th>报名时间</th>
+												<th>考级时间</th>
 												<th>视频链接</th>
 												<th>操作</th>
 											</tr>
@@ -152,7 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<td><?php echo $info_items['rank']; ?></td>
 											<td><?php echo $info_items['addtime']; ?></td>
 											<td><?php echo $info_items['link']; ?></td>
-											<td>删除|修改</td>
+											<td><a href="<?php echo site_url().'/home/deleteInfo/'.$info_items['infoid']; ?>" onclick="return confirm('确定删除吗？')"  title="Delete">删除</a></td>
 											</tr><?php endforeach; ?>
 										</tbody>
 									</table>

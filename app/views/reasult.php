@@ -45,12 +45,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<td><?php echo $result['phone']; ?></td>
 						</tr>
 						<tr>
-							<td class="success">报名时间</td>
+							<td class="success">考级时间</td>
 							<td><?php echo $result['addtime']; ?></td>
 						</tr>
 						<tr>
 							<td class="success">视频链接</td>
-							<td><?php echo $result['link']; ?></td>
+							<td><a href="http://<?php echo $result['link']; ?>"><?php echo $result['link']; ?></a></td>
 						</tr>
 						<?php }else{
                             echo "<tr><td>没有相关信息!!!</td></tr>";

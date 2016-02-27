@@ -42,11 +42,11 @@ class Score_model extends CI_Model
         }
     }
 
-    public function deleteUser($id)
+    public function M_deletescore($id)
     {
 
-        $id = $this->input->get('id');
-        return   $this->db->delete('user_score', array('id' => $id));
+        $query = $this->db->delete('user_score', array('id' => $id));
+        return  $query;  
 
     }
 
@@ -99,6 +99,15 @@ class Score_model extends CI_Model
 
           return $query->row_array();
     }
+
+      public function M_deleteinfo($infoid)
+    {
+
+        $query = $this->db->delete('user_info', array('infoid' => $infoid));
+        return  $query;  
+
+    }
+
 
 
 }

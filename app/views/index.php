@@ -148,7 +148,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<td><?php echo $score_items['username']; ?></td>
 											<td><?php echo $score_items['remark']; ?></td>
 											<td><?php echo $score_items['score']; ?></td>
-											<td>删除|修改</td>
+											<td><a href="<?php echo site_url().'/home/deleteScore/'.$score_items['id']; ?>" onclick="return confirm('确定删除吗？')" class="tooltip-error" title="Delete">删除</a>
+											</td>
 											</tr><?php endforeach; ?>
 										</tbody>
 									</table>
