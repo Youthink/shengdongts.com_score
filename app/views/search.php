@@ -23,6 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		   .main{
 		   	margin-top:60px;
 		   }
+		   @media (max-width: 768px){
+           .xsbutton {
+           text-align: center;
+           }}
 		</style>
 	</head>
 	
@@ -47,10 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<input type="phone" class="form-control" id="inputPhone" placeholder="电话" name="phone">
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-5">
-							<button type="submit" class="btn btn-success">查询您的信息</button>
-						</div>
+					<div class="form-group xsbutton">
+						<button type="submit" class="btn btn-success  col-sm-4 col-sm-offset-4">查询您的信息</button>
 					</div>
 				</div>
 			</div>

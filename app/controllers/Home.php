@@ -134,4 +134,34 @@ class Home extends CI_Controller{
 
     }
 
+     public function updateInfo($infoid)
+    {
+        $info['info'] = $this->score_model->get_info($infoid);
+
+        $this->load->view('updateinfo',$info); 
+
+    }
+
+    public function dealInfo()
+    {
+        $this->score_model->M_updateinfo();
+        redirect(site_url().'/home/show/comeinfo');
+
+    }
+
+     public function updateScore($id)
+    {
+        $score['score'] = $this->score_model->get_score($id);
+
+        $this->load->view('updatescore',$score); 
+
+    }
+
+    public function dealScore()
+    {
+        $this->score_model->M_updatescore();
+        redirect(site_url());
+
+    }
+
 }

@@ -127,42 +127,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</ul><!-- .breadcrumb -->
 					</div>
 					<div class="page-content">
-						<!-- PAGE CONTENT BEGINS -->
 						<div class="row">
-							<div class="col-xs-10">
-								<h3 class="header smaller lighter blue">排名列表</h3>
-								<div class="table-responsive">
-									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr>
-												<th>序号</th>
-												<th>姓名</th>
-												<th>备注</th>
-												<th>学分</th>
-												<th class="hidden-480">操作</th>
-											</tr>
-										</thead><?php $i=1;?>
-										<tbody> <?php foreach ($score as $score_items): ?>
-											<tr>
-											<td><?php echo $i++;?></td>
-											<td><?php echo $score_items['username']; ?></td>
-											<td><?php echo $score_items['remark']; ?></td>
-											<td><?php echo $score_items['score']; ?></td>
-											<td><a href="<?php echo site_url().'/home/deleteScore/'.$score_items['id']; ?>" onclick="return confirm('确定删除吗？')" class="tooltip-error" title="Delete">删除</a>
-											|<a href="<?php echo site_url().'/home/updateScore/'.$score_items['id']; ?>" >修改</a>
-											</td>
-											</tr><?php endforeach; ?>
-										</tbody>
-									</table>
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+                               <h3 class="header smaller lighter blue">添加分数信息</h3>
+								<div class="form-horizontal">
+									<?php echo validation_errors(); ?>
+
+									<?php echo form_open('home/dealScore'); ?>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="username" value="<?php echo $score['username'];?>"/>
+												<i class="icon-leaf green"></i>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">分数</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-1" name="score" value="<?php echo $score['score'];?>"/>
+												<i class="icon-leaf green"></i>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">备注</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="remark" placeholder="区分同名者" value="<?php echo $score['remark'];?>"/>
+												<i class="icon-leaf green"></i>
+											</span>
+										</div>
+									</div>
+									<input type="hidden"  name="remark" value="<?php echo $score['id'];?>"/>
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info"  type="submit">
+											<i class="icon-ok bigger-110"></i>
+											添加
+										</button>
+									</div>
 								</div>
-					        </div>
-				        </div>
+				              </div>
+						</div><!-- /.row -->
 					</div>
-						<!-- /.page-content -->
-					<!-- /.main-container-inner -->
-					<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-						<i class="icon-double-angle-up icon-only bigger-110"></i>
-					</a>
+				</div>	<!-- /.page-content -->
+				<!-- /.main-container-inner -->
+				<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+					<i class="icon-double-angle-up icon-only bigger-110"></i>
+				</a>
 				</div><!-- /.main-container --> <!-- basic scripts --> 
 				<!--[if !IE]> -->
 				<script type="text/javascript">
@@ -184,3 +199,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<!-- inline scripts related to this page -->
 	</body>
 </html>
+

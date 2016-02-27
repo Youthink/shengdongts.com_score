@@ -152,7 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<td><?php echo $info_items['rank']; ?></td>
 											<td><?php echo $info_items['addtime']; ?></td>
 											<td><?php echo $info_items['link']; ?></td>
-											<td><a href="<?php echo site_url().'/home/deleteInfo/'.$info_items['infoid']; ?>" onclick="return confirm('确定删除吗？')"  title="Delete">删除</a></td>
+											<td><a href="<?php echo site_url().'/home/deleteInfo/'.$info_items['infoid']; ?>" onclick="return confirm('确定删除吗？')"  title="Delete">删除</a>|<a href="<?php echo site_url().'/home/updateInfo/'.$info_items['infoid']; ?>" >修改</a></td>
 											</tr><?php endforeach; ?>
 										</tbody>
 									</table>

@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src='<?php echo base_url().'public/assets/js/respond.min.js'?>'>></script>
 		<![endif]-->
 		<style>
-			h3{
+			h3,#idbutton{
 		        text-align: center;
 		       }
 		</style>
@@ -57,6 +57,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							echo "<tr><td>请检查填入的信息是否正确.</td></tr>";
 							} ?>
 				</table>
+			</div>
+			<div id="idbutton">
+				   <a href="<?php echo site_url().'/search/' ?>" class="btn btn-success">返回 继续查询</a>
 			</div>
         </div>
 	</body>

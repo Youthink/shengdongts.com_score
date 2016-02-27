@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
-								<span class="menu-text">用户信息管理</span>
+								<span class="menu-text">客户信息管理</span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
@@ -98,14 +98,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li>
 									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										用户信息管理
+										客户信息管理
 									</a>
 								</li>
 
 								<li>
 									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										添加用户信息
+										添加客户信息
 									</a>
 								</li>
 							</ul>
@@ -118,51 +118,80 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">首页</a>
+								<a href="<?php echo base_url();?>">首页</a>
 							</li>
 
 							<li>
-								<a href="#">学分排名</a>
+								<a href="#">添加客户信息</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 					</div>
 					<div class="page-content">
-						<!-- PAGE CONTENT BEGINS -->
 						<div class="row">
-							<div class="col-xs-10">
-								<h3 class="header smaller lighter blue">排名列表</h3>
-								<div class="table-responsive">
-									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr>
-												<th>序号</th>
-												<th>姓名</th>
-												<th>备注</th>
-												<th>学分</th>
-												<th class="hidden-480">操作</th>
-											</tr>
-										</thead><?php $i=1;?>
-										<tbody> <?php foreach ($score as $score_items): ?>
-											<tr>
-											<td><?php echo $i++;?></td>
-											<td><?php echo $score_items['username']; ?></td>
-											<td><?php echo $score_items['remark']; ?></td>
-											<td><?php echo $score_items['score']; ?></td>
-											<td><a href="<?php echo site_url().'/home/deleteScore/'.$score_items['id']; ?>" onclick="return confirm('确定删除吗？')" class="tooltip-error" title="Delete">删除</a>
-											|<a href="<?php echo site_url().'/home/updateScore/'.$score_items['id']; ?>" >修改</a>
-											</td>
-											</tr><?php endforeach; ?>
-										</tbody>
-									</table>
+							<div class="col-md-12">
+								<!-- PAGE CONTENT BEGINS -->
+                               <h3 class="header smaller lighter blue">添加客户信息</h3>
+								<div class="form-horizontal">
+									<?php echo validation_errors(); ?>
+
+									<?php echo form_open('home/dealInfo'); ?>
+									<div class="form-group">
+										<label class="col-sm-3  control-label no-padding-right" for="form-field-1">姓名</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="username" value="<?php echo $info['username'];?>" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">等级</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-1" name="rank" placeholder="填写数字.例如:1" value="<?php echo $info['rank'];?>" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">电话</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-1" name="phone" value="<?php echo $info['phone'];?>"/>
+											</span>
+										</div>
+									</div>
+								
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">考级时间</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="date" id="form-field-1" name="addtime" value="<?php echo $info['addtime'];?>"/>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">视频链接</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-1" name="link" placeholder="请包含http;//" value="<?php echo $info['link'];?>"/>
+											</span>
+										</div>
+									</div>
+									 <input type="hidden" name="infoid" value="<?php echo $info['infoid'];?>" />
+									<div class="col-sm-offset-3 col-sm-9">
+										<button class="btn btn-info"  type="submit">
+											<i class="icon-ok bigger-110"></i>
+											添加
+										</button>
+									</div>
 								</div>
-					        </div>
-				        </div>
+				              </div>
+						</div><!-- /.row -->
 					</div>
-						<!-- /.page-content -->
-					<!-- /.main-container-inner -->
-					<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-						<i class="icon-double-angle-up icon-only bigger-110"></i>
-					</a>
+				</div>	<!-- /.page-content -->
+				<!-- /.main-container-inner -->
+				<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+					<i class="icon-double-angle-up icon-only bigger-110"></i>
+				</a>
 				</div><!-- /.main-container --> <!-- basic scripts --> 
 				<!--[if !IE]> -->
 				<script type="text/javascript">
@@ -184,3 +213,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<!-- inline scripts related to this page -->
 	</body>
 </html>
+

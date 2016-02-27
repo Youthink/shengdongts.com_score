@@ -25,9 +25,9 @@ class Score_model extends CI_Model
     }
 
 
-     public function get_score($username)
+     public function get_score($id)
     {
-        if($username=='')
+        if($id=='')
         {
               $this->db->order_by('score', 'DESC');
               $query = $this->db->get('user_score');
@@ -36,7 +36,7 @@ class Score_model extends CI_Model
 
         }else{
         
-              $query = $this->db->get_where('user_score', array('$username' => $username));
+              $query = $this->db->get_where('user_score', array('id' => $id));
 
               return $query->row_array();
         }
@@ -73,9 +73,9 @@ class Score_model extends CI_Model
     }
 
 
-     public function get_info($username)
+     public function get_info($infoid)
     {
-        if($username=='')
+        if($infoid=='')
         {
               $query = $this->db->get('user_info');
 
@@ -83,7 +83,7 @@ class Score_model extends CI_Model
 
         }else{
         
-              $query = $this->db->get_where('user_info', array('$username' => $username));
+              $query = $this->db->get_where('user_info', array('infoid' => $infoid));
 
               return $query->row_array();
         }
@@ -109,5 +109,43 @@ class Score_model extends CI_Model
     }
 
 
+      public function M_updateinfo()
+    {
+
+
+        $data = array(
+
+            'username' => $this->input->post('username'),
+            'link' => $this->input->post('link'),
+            'phone' => $this->input->post('phone'),
+            'addtime' => $this->input->post('addtime'),
+            'rank' => $this->input->post('rank'),
+            'infoid' => $this->input->post('infoid')
+        );
+
+        $this->db->where('infoid', $data['infoid']);
+
+        return $this->db->update('user_info', $data);
+
+    }
+
+
+    public function M_updatescore()
+    {
+
+
+        $data = array(
+
+             'username' => $this->input->post('username'),
+             'remark' => $this->input->post('remark'),
+             'score' => $this->input->post('score'),
+             'id' => $this->input->post('id'),
+        );
+
+        $this->db->where('id', $data['id']);
+
+        return $this->db->update('user_score', $data);
+
+    }
 
 }
