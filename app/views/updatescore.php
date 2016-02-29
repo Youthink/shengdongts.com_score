@@ -162,11 +162,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</span>
 										</div>
 									</div>
-									<input type="hidden"  name="remark" value="<?php echo $score['id'];?>"/>
+									<input type="hidden" name="id" value="<?php echo $score['id'];?>"/>
 									<div class="col-md-offset-3 col-md-9">
 										<button class="btn btn-info"  type="submit">
 											<i class="icon-ok bigger-110"></i>
-											添加
+											更新
 										</button>
 									</div>
 								</div>
