@@ -15,7 +15,8 @@ class Score_model extends CI_Model
 
             'username' => $this->input->post('username'),
             'remark' => $this->input->post('remark'),
-            'score' => $this->input->post('score')
+            'score' => $this->input->post('score'),
+            'facelink' => $this->input->post('facelink')
 
 
         );
@@ -140,6 +141,7 @@ class Score_model extends CI_Model
              'remark' => $this->input->post('remark'),
              'score' => $this->input->post('score'),
              'id' => $this->input->post('id'),
+             'facelink' => $this->input->post('facelink')
         );
 
         $this->db->where('id', $data['id']);

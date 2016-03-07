@@ -54,9 +54,10 @@ class Home extends CI_Controller{
         $this->form_validation->set_rules('score', 'score', 'required',
             array('required' => '分数不能为空'));
 
+  
         if ($this->form_validation->run() === FALSE)
         {
-            $this->load->view('addscore');
+            $this->load->view('addscore', $data);
 
         }else{
 
@@ -64,7 +65,6 @@ class Home extends CI_Controller{
             redirect(site_url());
 
         }
-
 
     }
 
@@ -174,5 +174,4 @@ class Home extends CI_Controller{
 
 
     }
-
 }

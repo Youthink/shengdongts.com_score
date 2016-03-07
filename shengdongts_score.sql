@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2016-03-07 08:29:13
+-- Generation Time: 2016-03-07 10:14:38
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -63,25 +63,27 @@ CREATE TABLE IF NOT EXISTS `user_score` (
   `username` varchar(60) NOT NULL COMMENT '姓名',
   `score` int(10) NOT NULL COMMENT '分数',
   `remark` varchar(80) NOT NULL COMMENT '备注',
+  `facelink` varchar(200) NOT NULL COMMENT '头像链接',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='分数排名' AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='分数排名' AUTO_INCREMENT=40 ;
 
 --
 -- 转存表中的数据 `user_score`
 --
 
-INSERT INTO `user_score` (`id`, `username`, `score`, `remark`) VALUES
-(23, '李文杰', 460, ''),
-(24, '邢子轩', 100, ''),
-(25, '庞朔洲', 100, ''),
-(26, '彭继栩', 110, ''),
-(27, '王霖钰', 500, ''),
-(29, '闫雨鸣飞', 340, ''),
-(31, '高桂鑫', 0, ''),
-(32, '杨博涵', 127, ''),
-(33, '谭馨钰', 141, ''),
-(34, '赵子赫', 200, ''),
-(35, '韩礼泽', 175, '');
+INSERT INTO `user_score` (`id`, `username`, `score`, `remark`, `facelink`) VALUES
+(23, '李文杰', 460, '', ''),
+(24, '邢子轩', 100, '', ''),
+(25, '庞朔洲', 100, '', ''),
+(26, '彭继栩', 110, '', ''),
+(27, '王霖钰', 500, '', ''),
+(29, '闫雨鸣飞', 340, '', ''),
+(31, '高桂鑫', 0, '', ''),
+(32, '杨博涵', 127, '', ''),
+(33, '谭馨钰', 141, '', ''),
+(34, '赵子赫', 200, '', ''),
+(35, '韩礼泽', 175, '', ''),
+(39, '111', 1111, '111', 'http://hufangyun.com/wp-content/uploads/2015/03/face.png');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

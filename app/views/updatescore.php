@@ -162,6 +162,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</span>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4">头像链接</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-4" name="facelink" placeholder="粘贴头像链接" value="<?php echo $score['facelink'];?>"/>
+												<i class="icon-leaf green"></i>
+											</span>
+										</div>
+									</div>
+
 									<input type="hidden" name="id" value="<?php echo $score['id'];?>"/>
 									<div class="col-md-offset-3 col-md-9">
 										<button class="btn btn-info"  type="submit">

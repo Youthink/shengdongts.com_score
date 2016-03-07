@@ -34,6 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<thead>
 						<tr>
 							<th>序号</th>
+							<th>头像</th>
 							<th>姓名</th>
 							<th>学分</th>
 						</tr>
@@ -41,6 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<tbody> <?php foreach ($score as $score_items): ?>
 						<tr>
 						<td class="warning"><?php echo $i++;?></td>
+						<td class="success"><img src="<?php echo $score_items['facelink']; ?>" width="60px"></td>
 						<td class="danger"><?php echo $score_items['username']; ?></td>
 						<td class="success"><?php echo $score_items['score']; ?></td>
 						</tr><?php endforeach; ?>

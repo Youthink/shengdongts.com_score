@@ -136,6 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<thead>
 											<tr>
 												<th>序号</th>
+												<th>头像</th>
 												<th>姓名</th>
 												<th>备注</th>
 												<th>学分</th>
@@ -145,6 +146,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<tbody> <?php foreach ($score as $score_items): ?>
 											<tr>
 											<td><?php echo $i++;?></td>
+											<td><img src="<?php echo $score_items['facelink']; ?>" width="40px"></td>
 											<td><?php echo $score_items['username']; ?></td>
 											<td><?php echo $score_items['remark']; ?></td>
 											<td><?php echo $score_items['score']; ?></td>

@@ -132,6 +132,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!-- PAGE CONTENT BEGINS -->
                                <h3 class="header smaller lighter blue">添加分数信息</h3>
 								<div class="form-horizontal">
+
 									<?php echo validation_errors(); ?>
 
 									<?php echo form_open('home/addScore'); ?>
@@ -145,23 +146,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">分数</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">分数</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="number" id="form-field-1" name="score"/>
+											    <input type="number" id="form-field-2" name="score"/>
 												<i class="icon-leaf green"></i>
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">备注</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-3">备注</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="text" id="form-field-1" name="remark" placeholder="区分同名者"/>
+											    <input type="text" id="form-field-3" name="remark" placeholder="区分同名者"/>
 												<i class="icon-leaf green"></i>
 											</span>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4">头像链接</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-4" name="facelink" placeholder="粘贴头像链接"/>
+												<i class="icon-leaf green"></i>
+											</span>
+										</div>
+									</div>
+
 									<div class="col-md-offset-3 col-md-9">
 										<button class="btn btn-info"  type="submit">
 											<i class="icon-ok bigger-110"></i>
