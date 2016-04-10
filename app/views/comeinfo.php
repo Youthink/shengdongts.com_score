@@ -90,7 +90,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
-								<span class="menu-text">用户信息管理</span>
+								<span class="menu-text">等级排名</span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/comerank'?>'>
+										<i class="icon-double-angle-right"></i>
+										等级管理
+									</a>
+								</li>
+
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/addrank'?>'>
+										<i class="icon-double-angle-right"></i>
+										增加等级排名
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text">会员档案</span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
@@ -98,14 +121,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li>
 									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										用户信息管理
+									    会员信息管理
 									</a>
 								</li>
 
 								<li>
 									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										添加用户信息
+										添加会员信息
 									</a>
 								</li>
 							</ul>
@@ -130,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<!-- PAGE CONTENT BEGINS -->
 						<div class="row">
 							<div class="col-xs-10">
-								<h3 class="header smaller lighter blue">信息列表</h3>
+								<h3 class="header smaller lighter blue">会员信息列表</h3>
 								<div class="table-responsive">
 									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
 										<thead>
@@ -138,8 +161,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<th>序号</th>
 												<th>姓名</th>
 												<th>电话</th>
-												<th>等级</th>
-												<th>考级时间</th>
+												<th>学校</th>
+												<th>班级</th>
+												<th>学习地点</th>
+												<th>报名时间</th>
+												<th>续费时间</th>
+												<th>备注</th>
 												<th>预览</th>
 												<th>操作</th>
 											</tr>
@@ -149,8 +176,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<td><?php echo $i++;?></td>
 											<td><?php echo $info_items['username']; ?></td>
 											<td><?php echo $info_items['phone']; ?></td>
-											<td><?php echo $info_items['rank']; ?></td>
+											<td><?php echo $info_items['school']; ?></td>
+											<td><?php echo $info_items['grade']; ?></td>
+											<td><?php echo $info_items['studyplace']; ?></td>
 											<td><?php echo $info_items['addtime']; ?></td>
+											<td><?php echo $info_items['moneytime']; ?></td>
+											<td><?php echo $info_items['remark']; ?></td>
 											<td><a href="<?php echo site_url().'/home/viewInfo/'.$info_items['infoid'];?>">预览</a></td>
 											<td><a href="<?php echo site_url().'/home/deleteInfo/'.$info_items['infoid']; ?>" onclick="return confirm('确定删除吗？')"  title="Delete">删除</a>|<a href="<?php echo site_url().'/home/updateInfo/'.$info_items['infoid']; ?>" >修改</a></td>
 											</tr><?php endforeach; ?>

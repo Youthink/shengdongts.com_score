@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<body>
 		<div class="main">
 			<div class="col-md-offset-3 col-md-6">
-				<h3 class="blue">信息查询</h3>
+				<h3 class="blue">会员信息查询</h3>
 				<div class="form-horizontal">
 				<?php echo validation_errors(); ?>
 

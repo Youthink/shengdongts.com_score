@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<body>
 	<div class="main-content">
 		<div class="col-md-offset-3 col-md-6">
-			<h3 class="blue">查询结果</h3>
+			<h3 class="blue">会员信息</h3>
 			<div class="table-responsive">
 				<table  class="table table-striped table-bordered table-hover">
 				<?php if(!empty($result)){ ?>
@@ -41,20 +41,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<td><?php echo $result['username']; ?></td>
 						</tr>
 						<tr>
-							<td class="success">等级</td>
-							<td><?php echo $result['rank']; ?></td>
-						</tr>
-						<tr>
-							<td class="success">电话</td>
+							<td class="primary">电话</td>
 							<td><?php echo $result['phone']; ?></td>
 						</tr>
 						<tr>
-							<td class="success">考级时间</td>
+							<td class="info">学习地点</td>
+							<td><?php echo $result['studyplace']; ?></td>
+						</tr>
+						<tr>
+							<td class="warning">学校</td>
+							<td><?php echo $result['school']; ?></td>
+						</tr>
+						<tr>
+							<td class="success">年级</td>
+							<td><?php echo $result['grade']; ?></td>
+						</tr>
+						<tr>
+							<td class="primary">报名时间</td>
 							<td><?php echo $result['addtime']; ?></td>
 						</tr>
 						<tr>
-							<td class="success">视频</td>
-							<td><?php echo $result['link']; ?></td>
+							<td class="info">续费时间</td>
+							<td><?php echo $result['moneytime']; ?></td>
+						</tr>
+						<tr>
+							<td class="warning">备注</td>
+							<td><?php echo $result['remark']; ?></td>
 						</tr>
 						<?php }else{
                             echo "<tr><td>没有相关信息!!!</td></tr>";

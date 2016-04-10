@@ -90,7 +90,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
-								<span class="menu-text">用户信息管理</span>
+								<span class="menu-text">等级排名</span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/comerank'?>'>
+										<i class="icon-double-angle-right"></i>
+										等级管理
+									</a>
+								</li>
+
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/addrank'?>'>
+										<i class="icon-double-angle-right"></i>
+										增加等级排名
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text">会员档案</span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
@@ -98,14 +121,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li>
 									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										用户信息管理
+									    会员信息管理
 									</a>
 								</li>
 
 								<li>
 									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										添加用户信息
+										添加会员信息
 									</a>
 								</li>
 							</ul>
