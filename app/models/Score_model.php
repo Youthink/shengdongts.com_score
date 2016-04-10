@@ -51,8 +51,27 @@ class Score_model extends CI_Model
 
     }
 
+    public function M_updatescore()
+    {
 
-    /* 客户信息部分*/
+
+        $data = array(
+
+             'username' => $this->input->post('username'),
+             'remark' => $this->input->post('remark'),
+             'score' => $this->input->post('score'),
+             'id' => $this->input->post('id'),
+             'facelink' => $this->input->post('facelink')
+        );
+
+        $this->db->where('id', $data['id']);
+
+        return $this->db->update('user_score', $data);
+
+    }
+
+
+    /* 会员信息部分*/
 
       public function M_addinfo()
     {
@@ -61,12 +80,13 @@ class Score_model extends CI_Model
         $data = array(
 
             'username' => $this->input->post('username'),
-            'link' => $this->input->post('link'),
             'phone' => $this->input->post('phone'),
+            'school' => $this->input->post('school'),
+            'studyplace' => $this->input->post('studyplace'),
+            'grade' => $this->input->post('grade'),
             'addtime' => $this->input->post('addtime'),
-            'rank' => $this->input->post('rank')
-
-
+            'moneytime' => $this->input->post('moneytime'),
+            'remark' => $this->input->post('remark')
         );
 
         return $this->db->insert('user_info', $data);
@@ -78,6 +98,7 @@ class Score_model extends CI_Model
     {
         if($infoid=='')
         {
+              $this->db->order_by('moneytime', 'DESC');
               $query = $this->db->get('user_info');
 
               return $query->result_array();
@@ -117,10 +138,13 @@ class Score_model extends CI_Model
         $data = array(
 
             'username' => $this->input->post('username'),
-            'link' => $this->input->post('link'),
             'phone' => $this->input->post('phone'),
+            'school' => $this->input->post('school'),
+            'studyplace' => $this->input->post('studyplace'),
+            'grade' => $this->input->post('grade'),
             'addtime' => $this->input->post('addtime'),
-            'rank' => $this->input->post('rank'),
+            'moneytime' => $this->input->post('moneytime'),
+            'remark' => $this->input->post('remark'),
             'infoid' => $this->input->post('infoid')
         );
 
@@ -131,23 +155,78 @@ class Score_model extends CI_Model
     }
 
 
-    public function M_updatescore()
+    
+
+/*等级信息*/
+
+ public function M_addrank()
     {
 
 
         $data = array(
 
-             'username' => $this->input->post('username'),
-             'remark' => $this->input->post('remark'),
-             'score' => $this->input->post('score'),
-             'id' => $this->input->post('id'),
-             'facelink' => $this->input->post('facelink')
+            'username' => $this->input->post('username'),
+            'rank' => $this->input->post('rank'),
+            'testtime' => $this->input->post('testtime'),
+            'onejump' => $this->input->post('onejump'),
+            'twojump' => $this->input->post('twojump'),
+            'threejump' => $this->input->post('threejump'),
+            'link' => $this->input->post('link'),
+            'facelink' => $this->input->post('facelink')
+
+
         );
 
-        $this->db->where('id', $data['id']);
-
-        return $this->db->update('user_score', $data);
+        return $this->db->insert('user_rank', $data);
 
     }
 
+
+     public function get_rank($rankid)
+    {
+        if($rankid=='')
+        {
+              $this->db->order_by('rank', 'DESC');
+              $query = $this->db->get('user_rank');
+
+              return $query->result_array();
+
+        }else{
+        
+              $query = $this->db->get_where('user_rank', array('rankid' => $rankid));
+
+              return $query->row_array();
+        }
+    }
+
+    public function M_deleterank($rankid)
+    {
+
+        $query = $this->db->delete('user_rank', array('rankid' => $rankid));
+        return  $query;  
+
+    }
+
+    public function M_updaterank()
+    {
+
+
+        $data = array(
+
+            'username' => $this->input->post('username'),
+            'rank' => $this->input->post('rank'),
+            'testtime' => $this->input->post('testtime'),
+            'onejump' => $this->input->post('onejump'),
+            'twojump' => $this->input->post('twojump'),
+            'threejump' => $this->input->post('threejump'),
+            'link' => $this->input->post('link'),
+            'rankid' => $this->input->post('rankid'),
+            'facelink' => $this->input->post('facelink')
+        );
+
+        $this->db->where('rankid', $data['rankid']);
+
+        return $this->db->update('user_rank', $data);
+
+    }
 }
