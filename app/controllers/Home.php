@@ -33,18 +33,7 @@ class Home extends CI_Controller{
         $this->load->view($page,$data); 
     }
 
-    public function show($page = 'comeinfo')
-    {
-        $info['info'] = $this->score_model->get_info($key=NULL);
-        $info['info_items'] = $this->score_model->get_info($key);
-
-        if (!file_exists(APPPATH.'/views/comeinfo.php'))
-        {
-            show_404();
-        }
-            
-        $this->load->view($page,$info); 
-    }
+   
 
       public function addScore()
     {
@@ -67,19 +56,116 @@ class Home extends CI_Controller{
         }
 
     }
+    public function deleteScore($id){
+
+        $this->score_model->M_deletescore($id);
+        redirect(site_url());
+
+    }
+
+     public function updateScore($id)
+    {
+        $score['score'] = $this->score_model->get_score($id);
+
+        $this->load->view('updatescore',$score); 
+
+    }
+
+    public function dealScore()
+    {
+        $this->score_model->M_updatescore();
+        redirect(site_url());
+
+    }
 
 
-     public function addInfo()
+  /**等级信息**/
+
+ public function showpage($page = 'comerank')
+    {
+
+        $data['rank'] = $this->score_model->get_rank($key=NULL);
+        $data['rank_items'] = $this->score_model->get_rank($key);
+
+        if (!file_exists(APPPATH.'/views/comerank.php'))
+        {
+            show_404();
+        }
+            
+        $this->load->view($page,$data); 
+    }
+
+   
+
+      public function addRank()
     {
         
         $this->form_validation->set_rules('username', 'username', 'required',
             array('required' => '姓名不能为空'));
         $this->form_validation->set_rules('rank', 'rank', 'required',
             array('required' => '等级不能为空'));
+
+  
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('addrank', $data);
+
+        }else{
+
+            $this->score_model->M_addrank();
+            redirect(site_url().'/home/showpage/comerank');
+
+        }
+
+    }
+    public function deleteRank($rankid){
+
+        $this->score_model->M_deleterank($rankid);
+        redirect(site_url().'/home/showpage/comerank');
+
+    }
+
+     public function updateRank($rankid)
+    {
+        $rank['rank'] = $this->score_model->get_rank($rankid);
+
+        $this->load->view('updaterank',$rank); 
+
+    }
+
+    public function dealRank()
+    {
+        $this->score_model->M_updaterank();
+        redirect(site_url().'/home/showpage/comerank');
+
+    }
+
+
+
+
+
+
+    /**用户档案**/
+     public function show($page = 'comeinfo')
+    {
+        $info['info'] = $this->score_model->get_info($key=NULL);
+        $info['info_items'] = $this->score_model->get_info($key);
+
+        if (!file_exists(APPPATH.'/views/comeinfo.php'))
+        {
+            show_404();
+        }
+            
+        $this->load->view($page,$info); 
+    }
+
+     public function addInfo()
+    {
+        
+        $this->form_validation->set_rules('username', 'username', 'required',
+            array('required' => '姓名不能为空'));
         $this->form_validation->set_rules('phone', 'phone', 'required',
             array('required' => '电话不能为空'));
-        $this->form_validation->set_rules('addtime', 'addtime', 'required',
-            array('required' => '报名时间不能为空'));
 
         if ($this->form_validation->run() === FALSE)
         {
@@ -120,12 +206,7 @@ class Home extends CI_Controller{
 
     }
 
-    public function deleteScore($id){
-
-        $this->score_model->M_deletescore($id);
-        redirect(site_url());
-
-    }
+    
 
     public function deleteInfo($infoid){
 
@@ -149,20 +230,7 @@ class Home extends CI_Controller{
 
     }
 
-     public function updateScore($id)
-    {
-        $score['score'] = $this->score_model->get_score($id);
-
-        $this->load->view('updatescore',$score); 
-
-    }
-
-    public function dealScore()
-    {
-        $this->score_model->M_updatescore();
-        redirect(site_url());
-
-    }
+    
 
       public function viewInfo($infoid)
     {
