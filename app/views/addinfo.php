@@ -90,7 +90,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
-								<span class="menu-text">客户信息管理</span>
+								<span class="menu-text">等级排名</span>
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/comerank'?>'>
+										<i class="icon-double-angle-right"></i>
+										等级管理
+									</a>
+								</li>
+
+								<li>
+									<a href='<?php echo  site_url().'/home/showpage/addrank'?>'>
+										<i class="icon-double-angle-right"></i>
+										增加等级排名
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-desktop"></i>
+								<span class="menu-text">会员档案</span>
 								<b class="arrow icon-angle-down"></b>
 							</a>
 
@@ -98,14 +121,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li>
 									<a href='<?php echo  site_url().'/home/show/comeinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										客户信息管理
+									    会员信息管理
 									</a>
 								</li>
 
 								<li>
 									<a href='<?php echo  site_url().'/home/show/addinfo'?>'>
 										<i class="icon-double-angle-right"></i>
-										添加客户信息
+										添加会员信息
 									</a>
 								</li>
 							</ul>
@@ -122,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</li>
 
 							<li>
-								<a href="#">添加客户信息</a>
+								<a href="#">添加会员信息</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 					</div>
@@ -130,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="row">
 							<div class="col-md-12">
 								<!-- PAGE CONTENT BEGINS -->
-                               <h3 class="header smaller lighter blue">添加客户信息</h3>
+                               <h3 class="header smaller lighter blue">添加会员信息</h3>
 								<div class="form-horizontal">
 									<?php echo validation_errors(); ?>
 
@@ -144,35 +167,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">等级</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2">学校</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="number" id="form-field-1" name="rank" placeholder="填写数字.例如:1" />
+											    <input type="text" id="form-field-2" name="school" />
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">电话</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-3">班级</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="number" id="form-field-1" name="phone"/>
+											    <input type="text" id="form-field-3" name="grade" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-4">学习地点</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-4" name="studyplace" />
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-5">电话</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="number" id="form-field-5" name="phone"/>
 											</span>
 										</div>
 									</div>
 								
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">考级时间</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-6">报名时间</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="date" id="form-field-1" name="addtime"/>
+											    <input type="date" id="form-field-6" name="addtime"/>
 											</span>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1">视频链接</label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-7">续费时间</label>
 										<div class="col-sm-9">
 											<span class="input-icon">
-											    <input type="text" id="form-field-1" name="link" placeholder="请包含http;//"/>
+											    <input type="date" id="form-field-7" name="moneytime"/>
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-8">备注</label>
+										<div class="col-sm-9">
+											<span class="input-icon">
+											    <input type="text" id="form-field-8" name="remark" />
 											</span>
 										</div>
 									</div>
