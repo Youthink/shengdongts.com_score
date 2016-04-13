@@ -28,12 +28,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<body>
 	<div class="main-content">
 		<div class="col-md-offset-3 col-md-6">
-			<h3 class="blue">等级列表</h3>
+			<h3 class="blue">等级排名</h3>
 			<div class="table-responsive">
 				<table  class="table table-striped table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>序号</th>
+							<th>排名</th>
 							<th>头像</th>
 							<th>姓名</th>
 							<th>等级</th>
